@@ -15,6 +15,10 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
+
 app.post("/user", (req, res) => {
   connection.query(
     "SELECT count(*) FROM user where kakao_id=?",
